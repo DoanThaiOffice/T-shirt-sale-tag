@@ -1,0 +1,130 @@
+/* lấy font size chữ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* hàm chính */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";   
+}
+
+body{
+    height: 100vh;
+    background-image: linear-gradient(to right, #292d4e, #3d8880);
+}
+
+.card{
+    /* khoảng cách các phần tử */
+    margin: 150px auto;
+    height: 375px;
+    width: 300px;
+    /* khoảng cách viền */
+    padding: 10px;  
+    background-color: rgb(102, 179, 185);
+    color: white;
+    /* vị trí: tương đối */
+    position: relative;
+}
+.card__cart, .card__heart{
+    left: 5px;
+    font-size: 35px;
+    /* vị trí: tuyệt đối */
+    position: absolute;
+    top: 5px;
+    /* đổi icon mouse khi chạm */
+    cursor: pointer;
+}
+.card__cart{
+    left: unset;
+    right: 5px;
+}
+.card__img{
+    width: 90%;
+    /* tạo animation cho ảnh mượt hơn */
+    transition: 0.5s;
+    cursor: pointer;
+}
+.card__img img{
+    width: 110%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;   
+}
+.card__title{
+    font-weight: bold;
+    text-align: center;
+    transition: 0.5s;
+}
+.card__cost{
+    font-weight: bold;
+    transition: 0.5s;
+    text-align: center;
+}
+.card__size, .card__color{
+    /* cho dữ liệu lên cùng 1 hàng */
+    display: flex;
+}
+.card__size span{
+    /* khoang cach */
+    padding: 0px 4px;
+    background-color: gainsboro;
+    /* tao nen` ngoai cua chu  */
+    margin: auto 3px;
+    /* lam` tron` goc vuong cua o */
+    border-radius: 12px;
+}
+.card__color span{
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    margin: 5px;
+}
+.card__color span.red{
+    background-color: red;
+}
+.card__color span.blue{
+    background-color: blue;
+}
+.card__color span.black{
+    background-color: black;
+}
+.card__button button{
+    border-radius: 12px;
+    background-color:darkturquoise;
+    /* bỏ viền */
+    border: none;
+    /* bỏ viền khi bấm vào */
+    outline: none;
+    padding: 3px 4px;
+    font-weight: bold;
+    color: white;
+    /* đổi icon mouse khi chạm */
+    cursor: pointer;
+}
+.card__button button:hover{
+    transform: scale(0.9);
+}
+/* khi con trỏ chạm img */
+.card:hover .card__img{
+    /* chuyển hướng, nghiêng: rotate(-20deg), 
+    di chuyển lên translateY()  */
+    transform: translateY(-50px);
+}
+.card:hover .card__cost{
+    transform: translate(-129px,-74px);
+}
+.card:hover .card__title{
+    transform: translate(-54px,-76px);
+}
+.card__size, .card__color, .card__button{
+    /* ẩn khỏi màn hình */
+    visibility: hidden;
+    transition: 0.5s;
+    margin: 2px;
+}
+.card:hover .card__size, .card:hover .card__color, .card:hover .card__button{
+    transform: translate(-7px,-69px);
+    visibility: visible;
+    transition-delay: 0.1s;   
+}
